@@ -1,0 +1,1156 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body { 
+margin-top: 0 !important;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header-icon {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.header-icon i,
+.header-icon .dashicons {
+  font-size: 22px;
+}
+
+/* Subtle hover feedback */
+.header-icon:hover {
+  opacity: 0.7;
+}
+
+
+/* =====================================================
+   STICKY TAB NAVIGATION
+===================================================== */
+
+.uagb-buttons__outer-wrap.sticky-tabs {
+  position: sticky !important;
+  top: 80px !important; /* offset for header */
+  z-index: 9999;
+}
+
+/* Active tab styling */
+.tab-link a.active {
+  background-color: #b0c3be !important;
+  color: #FFFFFF !important;
+}
+
+
+/* =====================================================
+   BOOKMARK BUTTON (GLOBAL)
+===================================================== */
+
+.bookmark-btn {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0 !important;
+
+  border-radius: 50%;
+  border: 1.5px solid #003F2E;
+  background: transparent !important;
+
+  cursor: pointer;
+  position: relative;
+
+  font-size: 0 !important;
+  line-height: 1;
+
+  transition: 0.2s ease;
+}
+
+/* Default (unsaved) heart */
+.bookmark-btn::before {
+  content: "♡";
+  font-size: 26px;
+  line-height: 1;
+  color: #003F2E;
+  transition: 0.2s ease;
+}
+
+/* Saved state */
+.bookmark-btn.saved::before {
+  content: "♥";
+  color: #003F2E;
+}
+
+/* Hover interaction */
+.bookmark-btn:hover {
+  transform: scale(1.05);
+}
+
+.bookmark-btn:hover::before {
+  transform: scale(1.15);
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.saved-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* =====================================================
+   CARD BASE
+===================================================== */
+
+.saved-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #fff;
+  border: 1.5px solid #003F2E;
+  border-radius: 12px;
+  overflow: hidden;
+
+  box-sizing: border-box;
+  padding: 16px;
+
+  transition: transform 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.saved-card:hover {
+  transform: translateY(-2px);
+}
+
+/* =====================================================
+   IMAGE + CONTENT
+===================================================== */
+
+.card-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+}
+
+.card-content h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+}
+
+.card-meta {
+  font-size: 12px;
+  font-weight: 500;
+  color: #003F2E;
+  opacity: 0.8;
+}
+
+/* =====================================================
+   CARD HEART (BASE STYLE ONLY)
+   → no positioning here anymore
+===================================================== */
+
+.card-heart {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  border: 1px solid #003F2E;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  font-size: 16px;
+  color: #999;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+  z-index: 5;
+}
+
+.card-heart:hover {
+  transform: scale(1.1);
+  color: #003F2E;
+}
+
+.card-heart.saved {
+  color: #003F2E;
+}
+
+
+/* =====================================================
+   ADD TO SCRIPT BUTTON
+===================================================== */
+
+.add-to-script-btn {
+  width: 64px;
+  height: 54px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2px;
+
+  border-radius: 10px;
+  border: 1px solid #003F2E;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.add-to-script-btn:hover {
+  transform: scale(1.05);
+}
+
+.add-to-script-btn .add-icon {
+  font-size: 18px;
+  line-height: 1;
+  color: #003F2E;
+}
+
+.add-to-script-btn .add-text {
+  font-size: 10px;
+  line-height: 1;
+  color: #003F2E;
+  text-align: center;
+}
+
+/* =====================================================
+   SAVED CARD HEART POSITION (ONLY HERE)
+===================================================== */
+
+.saved-card .card-heart {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* =====================================================
+   OPTIONAL: REMOVE OLD LAYOUT CONFLICTS
+===================================================== */
+
+/* if you had old positioning anywhere */
+.card-heart {
+  position: relative;
+}
+
+
+/* =====================================================
+   SHARE BUTTON
+===================================================== */
+
+.share-btn.shared {
+  background: #003F2E;
+  color: #fff;
+}
+
+
+/* =====================================================
+   SHARE MODAL
+===================================================== */
+
+.share-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  /* smooth fade */
+  transition: opacity 0.2s ease;
+}
+
+/* hidden state */
+.share-modal.hidden {
+  display: none !important;
+}
+
+
+/* =====================================================
+   MODAL BOX
+===================================================== */
+
+.share-modal-content {
+  width: 360px;
+  max-width: 90vw;
+
+  max-height: 75vh;
+  overflow-y: auto;
+
+  background: #fff;
+  border-radius: 14px;
+
+  padding: 20px;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+
+  animation: modalPop 0.2s ease;
+}
+
+/* little entrance animation */
+@keyframes modalPop {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+#shareSearch {
+  width: 100%;
+  padding: 10px 12px;
+
+  border: 1px solid #ddd;
+  border-radius: 8px;
+
+  outline: none;
+
+  margin-top: 10px;
+}
+
+#shareSearch:focus {
+  border-color: #003F2E;
+}
+
+
+/* =====================================================
+   USER LIST
+===================================================== */
+
+.share-user-list {
+  margin-top: 12px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.share-user {
+  padding: 10px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  transition: 0.15s ease;
+}
+
+.share-user:hover {
+  background: #f3f4f6;
+}
+
+.share-user.selected {
+  background: #dbeafe;
+  border-left: 3px solid #2563eb;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+#shareConfirmBtn,
+#shareCloseBtn {
+  width: 100%;
+  margin-top: 10px;
+
+  padding: 10px;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: 500;
+}
+
+#shareConfirmBtn {
+  background: #003F2E;
+  color: #fff;
+}
+
+#shareCloseBtn {
+  background: #eee;
+  color: #333;
+}
+
+#shareConfirmBtn:hover {
+  opacity: 0.9;
+}
+	
+	/* =====================================================
+   single script.php
+===================================================== */
+	
+	.script-view {
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.script-container h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+	
+a.script-edit-btn {
+  display: inline-block !important;
+  padding: 8px 14px !important;
+  border-radius: 8px !important;
+
+  background: #003F2E !important;
+  color: #fff !important;
+
+  text-decoration: none !important;
+
+  transition: all 0.2s ease;
+}
+
+a.script-edit-btn:hover {
+  background: #4CAF50 !important;
+  transform: translateY(-1px);
+}
+	
+
+
+/* =====================================================
+   QUERY WRAPPER (NO STYLING)
+===================================================== */
+
+.wp-block-query.destinations-grid {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* =====================================================
+   GRID LAYOUT
+===================================================== */
+
+.wp-block-query.destinations-grid .wp-block-post-template {
+  display: flex !important;
+  flex-wrap: wrap !important;
+
+  gap: 24px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  list-style: none !important;
+}
+
+/* =====================================================
+   CARD (3 COLUMNS)
+===================================================== */
+
+.wp-block-query.destinations-grid .wp-block-post-template > li {
+  flex: 0 0 calc(33.333% - 16px) !important;
+  max-width: calc(33.333% - 16px) !important;
+
+  box-sizing: border-box !important;
+
+  overflow: hidden;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  cursor: pointer;
+}
+
+/* Hover effect */
+.wp-block-query.destinations-grid .wp-block-post-template > li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* =====================================================
+   MAKE ENTIRE CARD CLICKABLE
+===================================================== */
+
+/* Ensure link fills entire card */
+.wp-block-query.destinations-grid .wp-block-post-template > li > a {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+  .wp-block-query.destinations-grid .wp-block-post-template > li {
+    flex: 0 0 calc(50% - 12px) !important;
+    max-width: calc(50% - 12px) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .wp-block-query.destinations-grid .wp-block-post-template > li {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* =====================================================
+   Logout
+===================================================== */
+
+.logout-button {
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+
+    padding: 8px 10px;
+    border-radius: 20px;
+    border: solid 2px #003F2E;
+    color: #003F2E;
+    text-decoration: none !important;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.logout-button:hover {
+    background: #d9e2e0;
+    color: black;
+}
+
+
+/* =====================================================
+   Search bar
+===================================================== */
+.wp-block-search__inside-wrapper {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 4px;
+}
+
+.wp-block-search__input {
+    background-color: #fff !important;
+    color: #111;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+
+.wp-block-search {
+    background: transparent;
+}
+
+
+
+/* =========================
+   BELL ICON
+========================= */
+
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dashicon / SVG sizing */
+.notification-icon .dashicons,
+.notification-icon svg {
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+  color: inherit;
+}
+
+
+/* =========================
+   UNREAD BADGE
+========================= */
+
+#notification-count {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #e53935;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+
+/* =========================
+   PANEL (DROPDOWN)
+========================= */
+
+#notification-panel {
+  position: fixed;
+  top: 70px;
+  right: 20px;
+  width: 320px;
+  max-height: 420px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  z-index: 999999;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+
+/* Hidden state */
+.hidden {
+  display: none !important;
+}
+
+
+/* =========================
+   LIST WRAPPER
+========================= */
+
+#notification-list {
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+
+/* =========================
+   NOTIFICATION ITEM
+========================= */
+
+.notification-item {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f2f2f2;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.notification-item:hover {
+  background: #f7f7f7;
+}
+
+.notification-item.unread {
+  background: #fafafa;
+  font-weight: 600;
+}
+
+
+/* timestamp */
+.notification-item small {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #888;
+}
+
+
+/* =========================
+   OPTIONAL: HEADER STYLE INSIDE PANEL
+========================= */
+
+#notification-panel::before {
+  content: "Notifications";
+  display: block;
+  padding: 12px 14px;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+
+/* =========================
+   SCROLLBAR (optional nice touch)
+========================= */
+
+#notification-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+#notification-list::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+/* unread */
+.notification-item.unread {
+  background: #f5f7ff;
+  font-weight: 600;
+}
+
+/* read */
+.notification-item.read {
+  background: #ffffff;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+
+/* dashboard notifications card */
+.dashboard-notifications-card {
+  border-radius: 12px;
+  padding: 16px;
+}
+
+#dashboard-notification-list .notification-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+#dashboard-notification-list .notification-item:last-child {
+  border-bottom: none;
+}
+
+
+.view-all-notifications {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.view-all-notifications:hover {
+  text-decoration: underline;
+}
+
+/* Folder CSS*/
+#folderList {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.folder-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 14px;
+
+    background: #fff;
+    border-radius: 12px;
+
+    text-decoration: none !important;
+    color: #111;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+
+    transition: 0.2s ease;
+}
+
+.folder-card:hover {
+    transform: translateY(-2px);
+}
+
+.folder-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;text-decoration: none !important;
+}
+
+.folder-name {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;text-decoration: none !important;
+}
+
+/* Destination Overview page CSS*/
+#destination-map {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  #destination-map {
+    height: 320px;
+  }
+}
+
+
+.destination-card a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+
+/* Add to scripts CSS*/
+
+/* =========================
+   WRAPPER
+========================= */
+
+.script-items-wrapper {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* =========================
+   DRAG CONTAINER
+========================= */
+
+#scriptItems {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* =========================
+   SCRIPT CARD
+========================= */
+
+.script-item-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px 14px;
+
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    user-select: none;
+
+    transition: background 0.2s ease;
+}
+
+.script-item-card:hover {
+    background: #fafafa;
+}
+
+/* =========================
+   LEFT SIDE (handle + title)
+========================= */
+
+.script-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    flex: 1;
+    min-width: 0; /* enables text ellipsis */
+}
+
+/* DRAG HANDLE */
+.drag-handle {
+    cursor: grab;
+    font-size: 18px;
+    flex-shrink: 0;
+
+    padding: 4px 6px;
+    border-radius: 6px;
+
+    color: #666;
+}
+
+.drag-handle:active {
+    cursor: grabbing;
+}
+
+/* TITLE */
+.script-title,
+.script-item-card h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* =========================
+   REMOVE BUTTON (X)
+========================= */
+
+.remove-from-script-btn {
+    background: transparent;
+    border: none;
+
+    font-size: 18px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    color: #999;
+
+    flex-shrink: 0;
+
+    padding: 4px 6px;
+    border-radius: 6px;
+
+    transition: 0.2s ease;
+}
+
+.remove-from-script-btn:hover {
+    color: #e74c3c;
+    background: rgba(231, 76, 60, 0.08);
+}
+
+/* =========================
+   DRAG STATES (SortableJS)
+========================= */
+
+.sortable-ghost {
+    opacity: 0.4;
+}
+
+.sortable-chosen {
+    background: #f9f9f9;
+}
+
+.sortable-drag {
+    opacity: 0.9;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.script-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+}
+
+.script-modal-content {
+    background: #fff;
+    width: 400px;
+    max-width: 90%;
+
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.script-modal-content h3 {
+    margin-top: 0;
+}
+
+/* =========================
+   SCRIPT CHOICES
+========================= */
+
+.script-choice {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.script-choice:hover {
+    background: #f5f5f5;
+}
+
+/* =========================
+   FOLDERS
+========================= */
+
+/* =========================
+   CLEAN FLAT FOLDER STYLE
+========================= */
+
+.folder-card {
+    text-decoration: none !important;
+    color: #111;
+}
+
+/* LEFT side (icon + name link) */
+.folder-open {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    text-decoration: none !important;
+    color: #111;
+}
+
+/* ICON = black */
+.folder-icon {
+    color: #000 !important;
+    font-size: 18px;
+}
+
+/* TEXT */
+.folder-name {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* RIGHT side (⋮ button) */
+.folder-actions {
+    display: flex;
+    align-items: center;
+}
+
+/* three dots button */
+.folder-menu-btn {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    color: #000 !important;
+    font-size: 18px;
+
+    cursor: pointer;
+    padding: 2px 6px;
+    line-height: 1;
+}
+
+/* dropdown menu */
+.folder-menu {
+    position: absolute;
+    right: 0;
+    top: 28px;
+
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    padding: 6px;
+    z-index: 999;
+}
+
+/* delete button inside menu */
+.js-delete-folder, .js-rename-folder {
+    background: transparent;
+    border: none;
+    color: #111;
+    font-size: 13px;
+
+    cursor: pointer;
+    padding: 6px 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.js-delete-folder:hover {
+    background: #f5f5f5;
+}
+
+.folder-rename-input {
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 4px 8px;
+    outline: none;
+}
+
+/* undo toast */
+.undo-toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: black;
+    padding: 12px 16px;
+    border-radius: 10px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    z-index: 999999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    font-size: 14px;
+}
+
+.undo-toast .undo-btn {
+    background: #003F2E;
+    border: none;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.undo-toast .undo-btn:hover {
+    background: #B0C3BE;
+}
