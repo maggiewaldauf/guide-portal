@@ -1,0 +1,598 @@
+
+/* =====================================================
+   BASE LAYOUT (SHARED)
+===================================================== */
+
+.destination-container,
+.knowledge-container {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 20px;
+  position: relative;
+
+  font-family: inherit;
+  color: #0f172a;
+}
+
+
+
+/* =====================================================
+   TITLES
+===================================================== */
+
+.destination-title,
+.knowledge-container h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin: 0 0 18px;
+  color: #0f172a;
+}
+
+/* =====================================================
+   GLOBAL TYPOGRAPHY (NORMAL CONTENT)
+   → applies to NON-WYSIWYG content
+===================================================== */
+
+.destination-container p,
+.knowledge-container p {
+  font-size: 16px;
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+
+/* headings */
+.destination-container h2,
+.knowledge-container h2 {
+  font-size: 28px;
+  margin: 0 0 18px;
+  color: #003F2E;
+  line-height: 1.3;
+}
+
+.destination-container h3,
+.knowledge-container h3 {
+  font-size: 20px;
+  margin: 0 0 12px;
+  color: #003F2E;
+  line-height: 1.3;
+}
+
+.destination-container h4,
+.knowledge-container h4 {
+  font-size: 18px;
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.destination-container,
+.knowledge-container,
+.guide-container,
+.overview-main,
+.overview-sidebar,
+.content-block {
+  position: relative;
+}
+
+
+
+/* =====================================================
+   PROSE / WYSIWYG SYSTEM (ACF + CONTENT EDITOR)
+===================================================== */
+
+.prose-content {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #0f172a;
+}
+
+/* paragraphs */
+.prose-content p {
+  margin: 0 0 18px;
+}
+
+/* headings inside WYSIWYG */
+.prose-content h2,
+.prose-content h3,
+.prose-content h4 {
+  margin: 34px 0 14px;
+  color: #003F2E;
+  line-height: 1.3;
+}
+
+/* remove top spacing for first element */
+.prose-content > *:first-child {
+  margin-top: 0 !important;
+}
+
+/* lists */
+.prose-content ul,
+.prose-content ol {
+  margin: 0 0 20px 22px;
+  padding: 0;
+}
+
+.prose-content li {
+  margin-bottom: 8px;
+}
+
+/* strong */
+.prose-content strong {
+  font-weight: 600;
+}
+
+/* links */
+.prose-content a {
+  color: #003F2E;
+  text-decoration: underline;
+}
+
+/* blockquote */
+.prose-content blockquote {
+  border-left: 4px solid #003F2E;
+  padding-left: 16px;
+  margin: 24px 0;
+  color: #334155;
+}
+
+/* images */
+.prose-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+/* horizontal rule */
+.prose-content hr {
+  border: none;
+  border-top: 1px solid #d6e7df;
+  margin: 40px 0;
+}
+
+/* clean empty paragraphs from WYSIWYG */
+.prose-content p:empty {
+  display: none;
+}
+/* =====================================================
+   TABS SYSTEM
+===================================================== */
+
+.tabs-nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.tab-btn {
+  border: none;
+  background: #E6F4EA;
+  color: #003F2E;
+
+  padding: 8px 14px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.tab-btn:hover {
+  background: #d7eee0;
+}
+
+.tab-btn.active {
+  background: #003F2E;
+  color: #fff;
+}
+
+/* tabs animation */
+.tab-content {
+  display: none;
+  animation: fadeTab 0.2s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeTab {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   OVERVIEW LAYOUT
+===================================================== */
+
+.overview-grid {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.overview-main {
+  flex: 2;
+  min-width: 0;
+}
+
+.overview-sidebar {
+  flex: 1;
+  min-width: 260px;
+}
+
+/* =====================================================
+   FACTS BOX (DESTINATION SIDEBAR)
+===================================================== */
+
+.facts-box {
+  background: #F5FBF8;
+  border: 1px solid #d6e7df;
+  border-left: 5px solid #003F2E;
+
+  padding: 18px;
+  border-radius: 10px;
+
+  position: sticky;
+  top: 100px;
+}
+
+.facts-box h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+/* =====================================================
+   CONTENT BLOCKS (GENERIC SYSTEM)
+===================================================== */
+
+.content-block {
+  margin-bottom: 28px;
+}
+
+.content-block-inner {
+  margin-top: 8px;
+}
+
+/* =====================================================
+   INFO BOX
+===================================================== */
+
+.info-box {
+  margin-bottom: 28px;
+}
+
+.info-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* =====================================================
+   TOUR COMPONENTS
+===================================================== */
+
+.tour-card {
+  padding: 18px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.tour-card:last-child {
+  border-bottom: none;
+}
+
+.tour-variation-box {
+  margin-top: 40px;
+  padding: 18px;
+
+  border: 1px solid #003F2E;
+  border-radius: 8px;
+  background: #F9FCFA;
+}
+
+.pdf-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+
+  border: 1px solid #003F2E;
+  background: #003F2E;
+  border-radius: 20px;
+
+  text-decoration: none;
+  color: #fff;
+}
+
+.pdf-button:hover {
+  background: #d9e2e0;
+}
+
+/* =====================================================
+   LOGISTICS
+===================================================== */
+
+.log-item {
+  margin-bottom: 18px;
+}
+
+.log-item strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #003F2E;
+}
+
+
+
+/* =====================================================
+   SIGHTS SECTION
+===================================================== */
+
+.sight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.sight-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+
+  border: 1px solid #d6e7df;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+
+  transition: 0.2s ease;
+}
+
+.sight-card:hover {
+  transform: translateY(-3px);
+}
+
+.sight-image img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.sight-content {
+  padding: 12px;
+}
+
+.sight-content h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.sight-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #475569;
+}
+
+/* =====================================================
+   GUIDE SECTION
+===================================================== */
+
+.guide-container {
+  margin: 40px;
+  padding: 0 20px;
+}
+
+.guide-title {
+  margin-bottom: 15px;
+  color: #003F2E;
+}
+
+.guide-intro {
+  background: #F5FBF8;
+  border-left: 4px solid #003F2E;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.guide-content {
+  line-height: 1.7;
+}
+
+/* =====================================================
+   KNOWLEDGE META (kept specific)
+===================================================== */
+
+.knowledge-meta {
+  margin-bottom: 20px;
+}
+
+.meta-pill {
+  display: inline-block;
+  padding: 6px 12px;
+  margin: 0 6px 6px 0;
+
+  border-radius: 999px;
+  background: #E6F4EA;
+
+  color: #003F2E;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.knowledge-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.knowledge-main {
+  flex: 2;
+  min-width: 0;
+}
+
+.knowledge-facts {
+  flex: 1;
+  min-width: 260px;
+
+  background: #F5FBF8;
+  border: 1px solid #d6e7df;
+  border-left: 5px solid #003F2E;
+
+  padding: 18px;
+  border-radius: 10px;
+
+  position: sticky;
+  top: 100px;
+}
+
+.knowledge-facts h3 {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .overview-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .facts-box {
+    position: relative;
+    top: auto;
+  }
+
+  .destination-title,
+  .knowledge-container h1 {
+    font-size: 30px;
+  }
+
+  .destination-container h2,
+  .knowledge-container h2 {
+    font-size: 24px;
+  }
+}
+
+
+
+/* =====================================================
+   GLOBAL CONTENT SPACING RESET (FIX ALL HEADINGS + HR)
+===================================================== */
+
+.content-block,
+.info-box,
+.tour-card,
+.facts-box,
+.tour-variation-box,
+.log-item,
+.overview-main,
+.overview-sidebar {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* HEADINGS ALWAYS HAVE SPACE ABOVE */
+.content-block h2,
+.content-block h3,
+.content-block h4,
+.info-box h2,
+.info-box h3,
+.info-box h4,
+.tour-card h2,
+.tour-card h3,
+.tour-card h4,
+.log-item h2,
+.log-item h3,
+.log-item h4 {
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+/* REMOVE FIRST HEADING EXTRA SPACE */
+.content-block > h2:first-child,
+.content-block > h3:first-child,
+.info-box > h2:first-child,
+.info-box > h3:first-child {
+  margin-top: 0;
+}
+
+/* HR GLOBAL FIX (NOT DEPENDENT ON PROSE) */
+hr {
+  border: none;
+  border-top: 1px solid #d6e7df;
+  margin: 40px 0;
+}
+
+
+
+
+/* =====================================================
+   POST CARD ACTIONS (HEART + ADD)
+===================================================== */
+
+.card-actions {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    z-index: 50;
+}
+
+/* =========================
+   HEART BUTTON (in actions row)
+========================= */
+
+.card-actions .card-heart {
+    width: 64px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+
+    border: 1px solid #003F2E;
+    background: rgba(255, 255, 255, 0.95);
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* hover */
+.card-actions .card-heart:hover {
+    transform: scale(1.05);
+}
+
+/* saved state */
+.card-actions .card-heart.saved {
+    color: #003F2E;
+}
+
+
+
+/* =========================
+   HEADER BLOCK (TITLE + INTRO ONLY)
+========================= */
+
+.knowledge-header {
+    max-width: 800px;
+}

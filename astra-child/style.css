@@ -1,0 +1,114 @@
+/*
+Theme Name: Astra Child
+Template: astra
+Version: 1.0
+*/
+
+body.post-type-archive-knowledge,
+body.post-type-archive-destination,
+body.post-type-archive-guide-topic,
+body.post-type-archive-tour,
+body.tax-knowledge-category,
+body.tax-knowledge-subcategory,
+body.tax-destination-category,
+body.tax-guide_category,
+body.tax-guide-subcategory, /* if you have one later */
+body.post-type-archive-guide,
+body.tax-guide {
+    background-color: #E6E6DE !important;
+}
+
+.ast-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px;
+}
+
+.ast-row .ast-article-post,
+.ast-row .ast-article-post.type-knowledge,
+.ast-row .ast-article-post.type-destination,
+.ast-row .ast-article-post.type-guide-topic,
+.ast-row .ast-article-post.type-tour {
+    background: #fff;
+    border-radius: 14px;
+    padding: 18px;
+    margin: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+    .ast-row .ast-article-post {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 600px) {
+    .ast-row .ast-article-post {
+        flex: 1 1 100%;
+    }
+}
+
+.ast-article-post .ast-article-inner,
+.ast-article-post .post-content,
+.ast-article-post .entry-content {
+    background: transparent !important;
+}
+
+.card-subcategories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.subcategory-pill {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #f2f2f2;
+}
+
+.card-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.meta-left {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.meta-right {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.relevance-badge {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.relevance-badge.high {
+    background: #e0bdbd;
+    color: #862022;
+}
+
+.relevance-badge.medium {
+    background: #e3d2c2;
+    color: #904c08;
+}
+
+.relevance-badge.low {
+    background: #7E9B88;
+    color: #003F2E;
+}
