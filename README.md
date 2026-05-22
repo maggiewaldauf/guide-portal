@@ -1,3 +1,11 @@
+## Demo Login
+
+You can test the platform using the demo account below:
+
+Username: demo (Email: demo@guideportal.com  )
+Password: demo12345
+
+## Code Info
 This project includes custom WordPress functionality created using the Code Snippets plugin.
 All snippets are exported in snippets-export.json.
 
