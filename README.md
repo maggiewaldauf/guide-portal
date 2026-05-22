@@ -5,6 +5,8 @@ You can test the platform using the demo account below:
 Username: demo (Email: demo@guideportal.com  )
 Password: demo12345
 
+(without logging in some functionalities like bookmarking will not work)
+
 ## Code Info
 This project includes custom WordPress functionality created using the Code Snippets plugin.
 All snippets are exported in snippets-export.json.
@@ -49,4 +51,4 @@ Each page was built using WordPress (Gutenberg, Shortcode) and structured as par
 
 ## Deployment
 - When deploying the pages to a hosting platform, the structure slightly change from root / to /project/ -> most navigation links and pages have been reconnected, however in case there is some buttons leading to a 404 page, check if the URL says /project/... .
-- Some code functionalities like the bookmarking system unfortunately broke. But it was like this the whole time - on and off and on and off. Maybe I can get it to work for the presentation again :D. If not, screenshots in the report & attached to this repository prove that it actually did work at some point:).
+- Some code functionalities like the bookmarking system are unfortunately a little unstable. It's an on - off - relationship. If it does not work, view the screenshots in the report & attached to this repository to see how it is supposed to work.
